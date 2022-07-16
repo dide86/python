@@ -1,22 +1,12 @@
-#Напишите программу для. проверки истинности утверждения ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z для всех значений предикат.
-def inputNumbers(x):
-    xyz = ["X", "Y", "Z"]
-    a = []
-    for i in range(x):
-        a.append(input(f"Введите значение {xyz[i]}: "))
-    return a
+# Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N.
+# Пример:
+# - пусть N = 4, тогда [ 1, 2, 6, 24 ] (1, 1*2, 1*2*3, 1*2*3*4)
 
+n= int(input('Введите число: '))
+sum=1
+i=1
+while i<=n:
+    sum=sum*i
+    print(sum)
+    i+=1
 
-def checkPredicate(x):
-    left = not (x[0] or x[1] or x[2])
-    right = not x[0] and not x[1] and not x[2]
-    result = left == right
-    return result
-
-
-statement = inputNumbers(3)
-
-if checkPredicate(statement) == True:
-    print(f"Истинно")
-else:
-    print(f"Ложно")
